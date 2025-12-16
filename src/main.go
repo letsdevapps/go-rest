@@ -20,6 +20,8 @@ func main() {
 	http.HandleFunc("/api/int", handlers.IntHandler2)
 	http.HandleFunc("/api/float", handlers.FloatHandler2)
 	http.HandleFunc("/api/boolean", handlers.BooleanHandler2)
+	http.HandleFunc("/api/user", handlers.GetUser)
+	http.HandleFunc("/api/users", handlers.GetUsers)
 
 	log.Println("Servidor rodando na porta 8080...")
 	err := http.ListenAndServe(":8080", nil)

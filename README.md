@@ -8,6 +8,8 @@
     http://localhost:8080/api/int
     http://localhost:8080/api/float
     http://localhost:8080/api/boolean
+    http://localhost:8080/api/user?id=1
+    http://localhost:8080/api/users
 
 ## Init
 
