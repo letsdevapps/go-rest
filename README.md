@@ -1,25 +1,33 @@
 # Go Rest
 
-## Api endpoints
+![GitHub last commit](https://img.shields.io/github/last-commit/letsdevapps/go-rest)
 
-    http://localhost:8080/api
-    http://localhost:8080/api/old
-    http://localhost:8080/api/string
-    http://localhost:8080/api/int
-    http://localhost:8080/api/float
-    http://localhost:8080/api/boolean
-    http://localhost:8080/api/user?id=1
-    http://localhost:8080/api/users
+![Go](https://img.shields.io/badge/java-1.22+-brightgreen)
 
-## Init
+![Docker](https://img.shields.io/badge/docker-enabled-blue)
+![Status](https://img.shields.io/badge/status-active-success)
 
-    go mod init go-rest
+## Docker Build
+
+    docker build -t go-rest .
+
+## Docker Run
+
+    docker run --rm -it -p 8080:8080 go-rest
+
+## Simple Run
+
+    go run src/main.go
     
     go run src/restServer.go
     
     go run src/controller/homeController.go
 
-## Build
+## Init Run
+
+    go mod init go-rest
+
+## Build Run
 
 Criar a pasta de saida (bin, target, build ...)
 
@@ -54,3 +62,15 @@ Instalar dependências: go get <url_do_repositorio>
 Compilar um arquivo Go: go build <arquivo.go>
 
 Verificar dependências: go mod tidy
+
+## API endpoints
+
+    GET http://localhost:8080/
+    GET /api
+    GET /api/string
+    GET /api/int
+    GET /api/float
+    GET /api/boolean
+    GET /api/user?id=1
+    GET /api/users
+
