@@ -18,11 +18,11 @@ func main() {
 }
 
 func index(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "----- Go Rest | Main -----")
+	fmt.Fprintf(w, "----- Go Rest | Main | Index -----")
 }
 
 func setUpRoutes() {
-	http.HandleFunc("/api/old", index)
+	http.HandleFunc("/", index)
 	//http.ListenAndServe(":8080", nil)
 
 	http.HandleFunc("/api", handlers.IndexHandler)
