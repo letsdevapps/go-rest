@@ -5,7 +5,7 @@
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/letsdevapps/go-rest/build-ci.yml?label=status%20integration)
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/letsdevapps/go-rest/build-cd.yml?label=status%20deployment)
 
-![Go](https://img.shields.io/badge/java-1.22+-brightgreen)
+![Go](https://img.shields.io/badge/go-1.22+-brightgreen)
 
 ![Docker](https://img.shields.io/badge/docker-enabled-blue)
 ![CI](https://img.shields.io/badge/ci-enabled-blue)
