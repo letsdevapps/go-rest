@@ -1,10 +1,15 @@
 # Go Rest
 
+![GitHub release](https://img.shields.io/github/v/release/letsdevapps/go-rest)
 ![GitHub last commit](https://img.shields.io/github/last-commit/letsdevapps/go-rest)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/letsdevapps/go-rest/build-ci.yml?label=status%20integration)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/letsdevapps/go-rest/build-cd.yml?label=status%20deployment)
 
 ![Go](https://img.shields.io/badge/java-1.22+-brightgreen)
 
 ![Docker](https://img.shields.io/badge/docker-enabled-blue)
+![CI](https://img.shields.io/badge/ci-enabled-blue)
+![CD](https://img.shields.io/badge/cd-enabled-blue)
 ![Status](https://img.shields.io/badge/status-active-success)
 
 ## Docker Build
