@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-rest-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: go-rest
+  template:
+    metadata:
+      labels:
+        app: go-rest
+    spec:
+      containers:
+        - name: go-rest-container
+          #image: go-rest:latest
+          #imagePullPolicy: Never
+          image: ghcr.io/letsdevapps/go-rest:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
