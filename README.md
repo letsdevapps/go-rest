@@ -11,6 +11,7 @@
 ![CI](https://img.shields.io/badge/ci-enabled-blue)
 ![CD](https://img.shields.io/badge/cd-enabled-blue)
 ![Kubernetes](https://img.shields.io/badge/kubernetes-enabled-blue)
+![Terraform](https://img.shields.io/badge/terraform-enabled-blue)
 ![Status](https://img.shields.io/badge/status-active-success)
 
 ## Docker Build
@@ -68,6 +69,102 @@ Instalar dependências: go get <url_do_repositorio>
 Compilar um arquivo Go: go build <arquivo.go>
 
 Verificar dependências: go mod tidy
+
+## Kubernetes (Minikube)
+
+Como rodar
+
+### 1. Subir o cluster
+    
+    minikube start
+
+### 2. Habilitar Ingress
+
+    minikube addons enable ingress
+
+### 3. Build da imagem
+
+    docker build -t springboot-rest:latest .
+
+### 4. (ou) carregar no minikube
+
+    minikube image load springboot-rest:latest
+
+### 5. Aplicar manifests
+
+    kubectl apply -f k8s/
+
+### 6. Acessar
+
+    minikube ip
+
+    http://<minikube-ip>/go-rest
+
+### Encontrar a URL
+
+    kubectl describe ingress app-ingress
+
+Exemplo de retorno
+
+    Name:             app-ingress
+    Labels:           <none>
+    Namespace:        default
+    Address:          192.168.59.102
+    Ingress Class:    nginx
+    Default backend:  <default>
+    Rules:
+      Host        Path  Backends
+      ----        ----  --------
+      *           
+                  /go-rest   go-rest-service:8080 (10.244.0.17:8080)
+    Annotations:  nginx.ingress.kubernetes.io/rewrite-target: /
+    Events:
+      Type    Reason  Age                    From                      Message
+      ----    ------  ----                   ----                      -------
+      Normal  Sync    5m27s (x2 over 5m48s)  nginx-ingress-controller  Scheduled for sync
+
+### Debug
+
+    kubectl get pods
+    kubectl get svc
+    kubectl get ingress
+    kubectl get endpoints
+    
+### Delete
+
+    kubectl delete all --all
+    kubectl delete ingress --all
+    kubectl delete configmap --all
+    kubectl delete secret --all
+    kubectl delete pvc --all
+
+## Terraform
+
+Verificar se Minikube esta rodando
+
+	minikube status
+
+Verificar se Ingress esta ativo no Minikube
+
+	minikube addons list
+	
+	minikube addons enable ingress
+
+Entrar na pasta `terraform` e inicializar
+
+	cd terraform
+	
+	terraform init
+
+	terraform plan
+
+Executar o setup
+
+	terraform apply
+
+Apagar o setup
+
+	terraform destroy
 
 ## API endpoints
 
